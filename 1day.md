@@ -62,13 +62,18 @@ TERRAFORM
       * Performance Test Environment 
       * Stress Test Environment 
       * User Acceptance Testing Environment (Pre-Prod/Staging)
+![preview](images/7.png)
 
 # Lets understand the complication for 3 different architectures
 
 * Monolith E commerce Application
+   * In 1 server all of your code  is running  
+   * Monolith can be layered
    
    * Architecture  
 ![preview](images/1.png)
+
+* if the no. of user is increase then server will also increase 
 
 * Servers used are Generally virtual machines. Your organization have many choices
 
@@ -112,9 +117,37 @@ Terraform
 
 * This is Infra as a code tool for declaratively creating infrastructure in almost all virtual platforms (vmware, kvm) and cloud providers (AWS, Azure, GCP,....)
 
+* Alternatives to Terraform
+
+  * ARM Templates, Azure Bicep
+       * Can be used in Azure Only
+  
+  * AWS Cloud formation:
+       * Can be used with AWS Only
+  
+  * Pulumi: As of now terraform is much popular than this.
+
 * Core components of Terraform 
 
    * Arguments: Inputs
    * Attributes: Outputs
    * Providers: Where to create infrastructure
    * Resource: What infra needs to be create 
+   
+   * Resource: This is the infrastructure which you want to create
+   * Provider: This refers to where you want to create infrastructure
+   * The inputs which we express in terraform are called as arguments
+   * The output given by terraform is referred as attribute
+    
+* Steps to Learn Terraform
+
+   * The template in terraform is expressed in Hashicorp Configuration Lanaguage (HCL).
+   *  Terms:
+      * Provider: Where we want to create resources.
+      * resource: The individual infra element to be created
+      * module: reusable template.
+
+* WOW (Ways of Working)    
+   * Figure out manual steps
+   * identify what can change and parametrize
+   * Now each step try to use HCL 
