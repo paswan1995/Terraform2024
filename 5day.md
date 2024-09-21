@@ -419,7 +419,40 @@ def multiply(a=10, b=20):
 
  * Lets ask the user the vnet cidr range and subnet cidr ranges
  * Lets ask the user for the Name of virtual network and subnets
+
+# variables
  
+ * refer: https://developer.hashicorp.com/terraform/language/values/variables
+ * Terraform provides variables where user can set values while applying 
+ * Variable definition
+ 
+ ```
+ variable "<variable_name>" {
+    type =  string | number | bool | map | object | list
+    description = 
+    default = 
+}
+ ```
+ * Lets look at example
+
+ ```
+ # definition
+variable "vpc_cidr" {
+    type = string
+    default = "10.0.0.0/16"
+    description = "vpc cidr"
+}
+
+resource "aws_vpc" "base" {
+    # usage
+    cidr_block = var.vpc_cidr
+}
+ ``` 
+ * Good practice is to define all variables in a file called as `variables.tf` or `inputs.tf`
+ * Variables can be passed at runtime during apply by adding -var to the apply
+ * `terraform apply -var vpc_cidr='192.168.0.0/16'` 
+
+
 # 2nd way to create a resources
 
   * in this we create `variables.tf` file 
