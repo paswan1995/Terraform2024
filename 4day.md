@@ -316,7 +316,7 @@ db_subnet_cidr = "10.0.1.0/24"
 * without passing `dev.tfvars` file , its gives you `variable.tf` file data
 ![preview](images/47.png)
 
-* We have use the following command `terraform plan -var-file="dev.tfvars"` or `terraform apply -var-file="dev.tfvars"`
+* We have use the following command [terraform plan -var-file=`dev.tfvars`] or [`terraform apply -var-file="dev.tfvars"`]
 
 * after passing `dev.tfvars` file 
   
